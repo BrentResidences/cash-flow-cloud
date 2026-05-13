@@ -173,7 +173,7 @@ def require_login():
     users_df = load_users()
 
     if users_df.empty:
-        st.title("Cash Flow Management App - Version 9")
+        st.title("Cash Flow Management App")
         st.subheader("Create First Login")
         st.info("No users exist yet. Create the first username and password to start using the app.")
         with st.form("create_first_user_form"):
@@ -203,7 +203,7 @@ def require_login():
     if st.session_state.authenticated:
         return
 
-    st.title("Cash Flow Management App - Version 9")
+    st.title("Cash Flow Management App")
     st.subheader("Login")
     with st.form("login_form"):
         username = st.text_input("Username")
@@ -583,7 +583,7 @@ cashflow_df = to_numeric_safe(cashflow_df, ["Amount"])
 
 require_login()
 
-st.title("Cash Flow Management App - Version 9")
+st.title("Cash Flow Management App")
 st.caption(f"Logged in as: {st.session_state.logged_in_user}")
 
 tab1, tab2, tab3, tab4, tab5, tab6, tab7, tab8, tab9 = st.tabs([
